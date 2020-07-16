@@ -6,7 +6,13 @@ import Home from "../components/home"
 import Skills from "../components/skills"
 import Briefcase from "../components/briefcase"
 import Training from '../components/training'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  html{
+    scroll-behavior: smooth;
+  }
+`
 
 const Hr = styled.hr`
   width: 100%;
@@ -14,7 +20,8 @@ const Hr = styled.hr`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <GlobalStyle/>
+    <SEO title="Portafolio" />
     <Home />
     <Skills/>
     <Hr/>

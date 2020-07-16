@@ -149,6 +149,13 @@ const Image = ({ name }) => {
           }
         }
       }
+      juego: file(relativePath: { eq: "juegomemoria.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
