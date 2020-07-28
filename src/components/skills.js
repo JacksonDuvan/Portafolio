@@ -40,6 +40,13 @@ const Grid = styled.div`
             grid-template-rows: repeat(3, 120px);
         }
     }
+    @media screen and (max-width: 500px){
+        &{
+            display: grid;
+            grid-template-columns: repeat(3, 85px);
+            grid-template-rows: repeat(3, 100px);
+        }
+    }
     @media screen and (max-width: 360px){
         &{
             display: grid;
@@ -60,6 +67,7 @@ const Skills = () => {
                 <Icon><Image name="html"/></Icon>
                 <Icon><Image name="css"/></Icon>
                 <Icon><Image name="javascript"/></Icon>
+                <Icon><Image name="sass"/></Icon>
                 <Icon><Image name="git"/></Icon>
                 <Icon><Image name="react"/></Icon>
                 <Icon><Image name="reduxIcon"/></Icon>

@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import styled, { css } from 'styled-components'
 import Image from './image'
 
 const Project = styled.div`
@@ -64,11 +64,25 @@ const A = styled.a`
         background-color: #007bff;
         color: white;
     }
+    pointer-events: ${props => props.project ? css`none` : ''}
 `
 
    
 
-const Projects = ({ title, description, project, github, name, tech }) => {
+const Projects = ({ title, description, project, github, name, tech, note }) => {
+    const [projectLength, setProject] = useState(false)
+    const lengthProject = () => {
+        if(project.length === 0){
+        setProject(true)
+        }else{
+        setProject(false)
+        }
+    }
+    useEffect(() => {
+       lengthProject()
+    })
+
+
     return(
         <Project>
             <Img>
@@ -77,10 +91,11 @@ const Projects = ({ title, description, project, github, name, tech }) => {
             <ContainerProject>
                 <h3>{title}</h3>
                 <p>{description}</p>
+                <p>{note}</p>
                 <p>{tech}</p>
                 <div>
                     <A href={github} target="__blank">GitHub</A>
-                    <A href={project}target="__blank">Abrir App</A>
+                    <A href={project} target="__blank" project={projectLength}>Abrir App</A>
                 </div>
             </ContainerProject>
         </Project>

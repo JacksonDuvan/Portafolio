@@ -156,6 +156,20 @@ const Image = ({ name }) => {
           }
         }
       }
+      news: file(relativePath: { eq: "news.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sass: file(relativePath: { eq: "sass.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 

@@ -6,8 +6,9 @@ import Waves from './waves'
 const HomeContainer = styled.div`
   width: 100%;
   height: 90vh;
-  margin-top:30px;
-  background: linear-gradient(#5b43d6, #6610f2);
+  /* margin-top:30px; */
+  /* background: linear-gradient(#5b43d6, #6610f2); */
+  background-color: #5b43d6;
   border-radius: 0 0 15% 15%;
   display: flex;
   justify-content: center;
@@ -15,6 +16,7 @@ const HomeContainer = styled.div`
   flex-direction:column;
   color: white;
   position: relative;
+  /* z-index: 1; */
   @media screen and (max-width: 480px){
     &{
       margin-top: 0;

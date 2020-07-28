@@ -1,12 +1,22 @@
 export const DataProject = [
     {
+        id: 7,
+        title: 'News Times',
+        description: 'Entérate de lo que esta pasando en el mundo.',
+        note: 'NOTA: La app no esta en producción por restricciones de la API.',
+        project: '',
+        github: 'https://github.com/JacksonDuvan/NewsTimes',
+        name: 'news',
+        tech: 'Tech: React, Sass, Webpack, Api News'
+    },
+    {
         id: 6,
         title: 'Juego de Memoria',
         description: 'Entrena tu memoria con los personajes de rick and morty.',
         project: 'https://juego-de-memoria.jacksonduvan.vercel.app/',
         github: 'https://github.com/JacksonDuvan/Juego-de-Memoria',
         name: 'juego',
-        tech: 'React, Graphql, Apollo, Material-ui, Webpack, Hooks, Api Rick and Morty'
+        tech: 'Tech: React, Graphql, Apollo, Material-ui, Webpack, Hooks, Api Rick and Morty'
     },
     {
         id: 5,
@@ -15,7 +25,7 @@ export const DataProject = [
         project: 'https://jacksonzambrano.netlify.app/',
         github: 'https://github.com/JacksonDuvan/Portafolio',
         name: 'portafolio',
-        tech: 'React, Gatsby, Styled Component, Graphql, Hooks'
+        tech: 'Tech: React, Gatsby, Styled Component, Graphql, Hooks'
     },
     {
         id: 4,
@@ -24,7 +34,7 @@ export const DataProject = [
         project: 'https://platziswag-jackson.netlify.app/',
         github: 'https://github.com/JacksonDuvan/platzi-swag',
         name: 'swag',
-        tech: 'React, Gatsby, Styled Component, Graphql, Stripe'
+        tech: 'Tech: React, Gatsby, Styled Component, Graphql, Stripe'
     },
     {
         id: 3,
@@ -33,7 +43,7 @@ export const DataProject = [
         project: 'https://clon-spotify.jacksonduvan.now.sh/',
         github: 'https://github.com/JacksonDuvan/clon-spotify',
         name: 'spotify',
-        tech: 'HTML, CSS, React, Redux, API Spotify, Redux-thunk'
+        tech: 'Tech: HTML, CSS, React, Redux, API Spotify, Redux-thunk'
     },
     {
         id: 2,
@@ -42,7 +52,7 @@ export const DataProject = [
         project: 'https://reactions-fb.jacksonduvan.now.sh/',
         github: 'https://github.com/JacksonDuvan/reactions_fb',
         name: 'reactions',
-        tech: 'HTML, CSS, JavaScript, API Nasa'
+        tech: 'Tech: HTML, CSS, JavaScript, API Nasa'
     },
     {
         id: 1,
@@ -51,6 +61,6 @@ export const DataProject = [
         project: 'https://jacksonduvan.github.io/kiwi_campus/',
         github: 'https://github.com/JacksonDuvan/kiwi_campus',
         name: 'kiwi',
-        tech: 'HTML, CSS, JavaScript'
+        tech: 'Tech: HTML, CSS, JavaScript'
     }
 ]

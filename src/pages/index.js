@@ -8,6 +8,7 @@ import Briefcase from "../components/briefcase"
 import Training from '../components/training'
 import styled, { createGlobalStyle } from 'styled-components'
 
+
 const GlobalStyle = createGlobalStyle`
   html{
     scroll-behavior: smooth;
@@ -18,7 +19,8 @@ const Hr = styled.hr`
   width: 100%;
 `
 
-const IndexPage = () => (
+const IndexPage = (props) => {
+  return(
   <Layout>
     <GlobalStyle/>
     <SEO title="Portafolio" />
@@ -29,5 +31,6 @@ const IndexPage = () => (
     <Training/>
   </Layout>
 )
+}
 
 export default IndexPage

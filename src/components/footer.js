@@ -29,7 +29,7 @@ const Ancla = styled.a`
 const Footer = () => {
   return (
   <FooterContainer>
-    <H2>CONTACTAME</H2>
+    <H2>CONTÁCTAME</H2>
     <Icons>
       <Ancla href="https://www.linkedin.com/in/jackson-zambrano-a21362171/" target="__black"><FaLinkedin size='30px' /></Ancla>
       <Ancla href="https://github.com/JacksonDuvan" target="__black"><GrGithub size='30px' /></Ancla>

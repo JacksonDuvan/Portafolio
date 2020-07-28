@@ -1,23 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled, { css, keyframes } from "styled-components"
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { MdClose } from 'react-icons/md'
 import { useHandlerScroll } from '../hooks/useHandlerScroll'
-import { useHandlerScreen } from '../hooks/useHandlerScreen'
+import logoJZ from '../images/{JacksonZambrano}.png'
 
 const animateTop = keyframes`
   to{
-    margin: 20px 15px;
+    height: 70px;
   }from{
-    margin: 30px 15px;
+    height: 80px;
   }
 `
 const animateButton = keyframes`
   to{
-    margin: 30px 15px;
+    height: 80px;
   }from{
-    margin: 20px 15px;
+    height: 70px;
   }
 `
 const animateTopMenu = keyframes`
@@ -42,32 +43,8 @@ const NavBar = styled.header`
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
-  top: 0;
   z-index:1;
   box-shadow: ${props => props.scroll ? '0 0 3px #000': 'none'};
-  @media screen and (max-width: 800px) {
-    & {
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-`
-const H1 = styled.h1`
-  margin: 0;
-  margin-bottom: 5px;
-  font-size: 30px;
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  @media screen and (max-width: 480px){
-    &{
-      font-size: 20px;
-    }
-  }
 `
 
 const Menu = styled.nav`
@@ -80,17 +57,27 @@ const Menu = styled.nav`
     font-size: 16px;
     color: white;
     font-weight: bold;
-    animation: ${props => props.scroll ? css`${animateTop} 1s` : css`${animateButton} 1s`};
-    margin: ${props => props.scroll ? '20px 15px': '30px 15px'};
+    margin: 0 15px;
+    @media screen and (max-width: 800px){
+      &{
+        margin: 20px 15px;
+      }
+    }
   }
   a:hover {
     color: #ffcb05;
   }
   @media screen and (max-width: 800px) {
     & {
+      background-color: #5b43d6;
       flex-direction: column;
-      justify-content: center;
-      opacity: 0;
+      box-shadow: 0px 3px 3px rgba(0,0,0, .3);
+      width: 100%;
+      position: fixed;
+      z-index: 0;
+      top: 50px;
+      transition: .5s;
+      left: ${props => props.menu ? 0 : '-1000px'};
     }
   }
 `
@@ -100,74 +87,66 @@ const HeaderMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  animation: ${props => props.scroll ? css`${animateTopMenu} 1s` : css`${animateButtonMenu} 1s`};
-  height: ${props => props.scroll ? '50px': '60px'};
-`
-const fadeIn = keyframes`
-  0%{
-    height: 0; 
-    opacity: 0;
-  }100%{
-    height: 200px; 
-    opacity: 1;
+  z-index:3;
+  animation: ${props => props.scroll ? css`${animateTop} 1s` : css`${animateButton} 1s`};
+  height: ${props => props.scroll ? '70px': '80px'};
+  svg {
+    position: absolute;
+    bottom: 100px;
+    transition: .5s;
+    @media screen and (max-width: 800px){
+      &{
+        position: relative;
+        bottom: 0;
+      }
+    }
+  }
+  @media screen and (max-width: 800px){
+    &{
+      animation: ${props => props.scroll ? css`${animateTopMenu} 1s` : css`${animateButtonMenu} 1s`};
+      height: ${props => props.scroll ? '50px': '60px'};
+    }
   }
 `
 
-const MenuBurger = styled.div`
-  background-color: #5b43d6;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  position: absolute;
-  margin-top: 120px;
-  right: 0;
-  left:0;
-  height: 200px;
-  animation:  ${fadeIn} 500ms;
-  a{
-    color: white;
+const IMG = styled.img`
+  margin-top: 25px;
+  width: 250px;
+  @media screen and (max-width: 800px){
+    &{
+    margin-top: 25px;
+     width: 300px;
+  }
+  @media screen and (max-width: 500px){
+    &{
+    margin-top: 25px;
+     width: 210px;
   }
 `
+
 
 const Header = ({ siteTitle }) => {
-
   const { scroll } = useHandlerScroll()
-  const { screen, menu, setMenu } = useHandlerScreen()
-  
-  if(screen){
-    return(
+  const [menu, setMenu] = useState(false)
+    
+  return(
       <NavBar scroll={scroll}>
-      <HeaderMenu scroll={scroll}>
-       <H1>
-          <Link to="/" >{siteTitle}</Link>
-          </H1>
-          <GiHamburgerMenu color='white' size='25px' onClick={() => setMenu(!menu)}/>
+        <HeaderMenu scroll={scroll}>
+          <Link to="/" ><IMG src={logoJZ} alt="logoJZ"/> </Link>
+          
           {
-            menu &&  <MenuBurger scroll={scroll} menu={menu}>
+            menu 
+              ? <MdClose color='white' size='28px' onClick={() => setMenu(!menu)}/>
+              : <GiHamburgerMenu color='white' size='25px' onClick={() => setMenu(!menu)}/>
+          }
+          <Menu scroll={scroll} menu={menu}>
               <a href="#habilidades" onClick={() => setMenu(false)}>HABILIDADES</a>
               <a href="#portafolio" onClick={() => setMenu(false)}>PORTAFOLIO</a>
               <a href="#formacion" onClick={() => setMenu(false)}>FORMACIÓN</a>
-          </MenuBurger>
-          } 
+          </Menu>
         </HeaderMenu>
       </NavBar>
     )
-  }else{
-    return(
-      <NavBar scroll={scroll}>
-      <H1>
-          <Link to="/" >{siteTitle}</Link>
-          </H1>
-          <Menu scroll={scroll}>
-              <a href="#habilidades">HABILIDADES</a>
-              <a href="#portafolio">PORTAFOLIO</a>
-              <a href="#formacion">FORMACIÓN</a>
-          </Menu>
-      </NavBar>
-    )
-  }
-
 }
 
 Header.propTypes = {
