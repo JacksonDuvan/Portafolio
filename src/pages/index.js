@@ -23,7 +23,7 @@ const IndexPage = (props) => {
   return(
   <Layout>
     <GlobalStyle/>
-    <SEO title="Portafolio" />
+    <SEO title="Sitio Web" />
     <Home />
     <Skills/>
     <Hr/>
