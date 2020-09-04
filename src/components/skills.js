@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from './image'
+import Fade from 'react-reveal/Fade'
 
 const SkillsContainer = styled.div`
     width: 100%;
@@ -64,14 +65,14 @@ const Skills = () => {
         <SkillsContainer id="habilidades">
             <H2>HABILIDADES</H2>
             <Grid>
-                <Icon><Image name="html"/></Icon>
-                <Icon><Image name="css"/></Icon>
-                <Icon><Image name="javascript"/></Icon>
-                <Icon><Image name="sass"/></Icon>
-                <Icon><Image name="git"/></Icon>
-                <Icon><Image name="react"/></Icon>
-                <Icon><Image name="reduxIcon"/></Icon>
-                <Icon><Image name="gatsby"/></Icon>
+                <Icon><Fade left><Image name="html"/></Fade></Icon>
+                <Icon><Fade left><Image name="css"/></Fade></Icon>
+                <Icon><Fade left><Image name="javascript"/></Fade></Icon>
+                <Icon><Fade left><Image name="sass"/></Fade></Icon>
+                <Icon><Fade right><Image name="git"/></Fade></Icon>
+                <Icon><Fade right><Image name="react"/></Fade></Icon>
+                <Icon><Fade right><Image name="reduxIcon"/></Fade></Icon>
+                <Icon><Fade right><Image name="gatsby"/></Fade></Icon>
             </Grid>
         </SkillsContainer>
     )

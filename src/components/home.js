@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Image from './image'
 import Waves from './waves'
+import Fade from 'react-reveal/Fade'
 
 const HomeContainer = styled.div`
   width: 100%;
@@ -53,11 +54,13 @@ const Home = () => {
       <Img>
       <Image name="placeholderImage"/>
       </Img>
+      <Fade big>
       <Parrafo>
         ¡Hola! Soy <strong>Jackson Zambrano</strong> <br/>
         desarrollador <strong>Frontend</strong> con<br/>
         pasión por la tecnología. <br/>
       </Parrafo>
+      </Fade>
       </Container>
       <Waves/>
     </HomeContainer>

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import Image from './image'
+import Fade from 'react-reveal/Fade'
+import Slide from 'react-reveal/Slide'
+import Flip from 'react-reveal/Flip'
 
 const Project = styled.div`
     width:90%;
@@ -85,18 +88,27 @@ const Projects = ({ title, description, project, github, name, tech, note }) => 
 
     return(
         <Project>
-            <Img>
-            <Image name={name}/>
-            </Img>
+            <Fade left>
+                <Img>
+                <Image name={name}/>
+                </Img>
+            </Fade>
+            
             <ContainerProject>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <p>{note}</p>
-                <p>{tech}</p>
-                <div>
-                    <A href={github} target="__blank">GitHub</A>
-                    <A href={project} target="__blank" project={projectLength}>Abrir App</A>
-                </div>
+                <Slide right cascade>
+                    <div>
+                        <h3>{title}</h3>
+                        <p>{description}</p>
+                        <p>{note}</p>
+                        <p>{tech}</p>
+                    </div>
+                </Slide>
+                <Fade right>
+                    <div>
+                        <A href={github} target="__blank">GitHub</A>
+                        <A href={project} target="__blank" project={projectLength}>Abrir App</A>
+                    </div>
+                </Fade>
             </ContainerProject>
         </Project>
     )

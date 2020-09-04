@@ -68,7 +68,7 @@ const Briefcase = () => {
                 button ? <>
                     {
                         DataProject.map(data => (
-                        <Projects 
+                            <Projects 
                             key={data.id} 
                             title={data.title}
                             description={data.description}

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from '../components/image'
+import Fade from 'react-reveal/Fade'
 
 const TrainingContainer = styled.div`
     background-color: #5b43d6;
@@ -72,7 +73,7 @@ const Ancla = styled.a`
 const Training = () => {
     return(
         <TrainingContainer id="formacion">
-            <H2>FORMACIÓN</H2>
+            <Fade big><H2>FORMACIÓN</H2></Fade>
             <Certificados>
             <a href="https://platzi.com/@jakson-duvan-zambrano/ruta/100-escuela-javascript/diploma/detalle/" target="__blank"><Image name="carrera" /></a>
             <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1640-frontend-developer/diploma/detalle/" target="__blank"><Image name="frontend" /></a>
