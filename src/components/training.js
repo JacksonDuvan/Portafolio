@@ -73,7 +73,7 @@ const Ancla = styled.a`
 const Training = () => {
     return(
         <TrainingContainer id="formacion">
-            <Fade big><H2>FORMACIÓN</H2></Fade>
+            <H2>FORMACIÓN</H2>
             <Certificados>
             <a href="https://platzi.com/@jakson-duvan-zambrano/ruta/100-escuela-javascript/diploma/detalle/" target="__blank"><Image name="carrera" /></a>
             <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1640-frontend-developer/diploma/detalle/" target="__blank"><Image name="frontend" /></a>
