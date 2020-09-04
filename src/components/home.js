@@ -54,7 +54,7 @@ const Home = () => {
       <Img>
       <Image name="placeholderImage"/>
       </Img>
-      <Fade big>
+      <Fade top cascade>
       <Parrafo>
         ¡Hola! Soy <strong>Jackson Zambrano</strong> <br/>
         desarrollador <strong>Frontend</strong> con<br/>
