@@ -6,27 +6,20 @@ import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri'
 
 const Div = styled.div`
     width: 100%;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     background-color: white;
 `
 
 const H2 = styled.h2`
     text-align: center;
-    margin-top: 100px;
+    padding-top: 50px;
     color: #a9a9a9;
-    @media screen and (max-width: 480px){
-        margin-top: 30px;
-    }
-    @media screen and (max-width: 360px){
-        margin-top: 30px;
-    }
 `
 const Hr = styled.hr`
     width: 100%;
     margin: 0;
 `
 const Button = styled.button`
-    /* margin: 20px 15px 20px 0; */
     background-color: transparent;
     outline: none;
     color: #fff;

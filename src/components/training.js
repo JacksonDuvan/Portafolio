@@ -5,24 +5,28 @@ import Fade from 'react-reveal/Fade'
 
 const TrainingContainer = styled.div`
     background-color: #5b43d6;
-    height: 100vh;
+    /* scroll-snap-align: left; */
+    height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px ;
+    justify-content: center;
+    /* padding-top: 100px ; */
     @media screen and (max-width: 480px){
         &{
-            height: 90vh;
+            height: calc(100vh - 50px);
         }
     }
 `
 
 const Certificados = styled.div`
-    width: 55%;
+    width: 50%;
     display: grid;
     grid-template-columns: repeat(6, 400px);
-    grid-column-gap: 50px;
-    overflow-x: auto;
+    grid-column-gap: 40px;
+    overflow-x: scroll;
+     scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
     padding: 5px 0;
     &::-webkit-scrollbar{
         /* width: 2px; */
@@ -38,7 +42,8 @@ const Certificados = styled.div`
     }
     @media screen and (max-width: 800px){
         &{
-            width: 80%;
+            width: 90%;
+            grid-column-gap: 5px;
         }
     }
     @media screen and (max-width: 360px){
@@ -50,9 +55,15 @@ const Certificados = styled.div`
         transform: scale(1.02);
     }
 ` 
+
+const ImageContainer = styled.div`
+    scroll-snap-align: center; 
+`
+
 const H2 = styled.h2`
     text-align: center;
     color: white;
+    /* padding-top: 50px; */
 `
 const Ancla = styled.a`
     margin-top: 30px;
@@ -75,12 +86,37 @@ const Training = () => {
         <TrainingContainer id="formacion">
             <H2>FORMACIÓN</H2>
             <Certificados>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/ruta/100-escuela-javascript/diploma/detalle/" target="__blank"><Image name="carrera" /></a>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1640-frontend-developer/diploma/detalle/" target="__blank"><Image name="frontend" /></a>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1642-javascript-profesional/diploma/detalle/" target="__blank"><Image name="profesional" /></a>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1548-react/diploma/detalle/" target="__blank"><Image name="reactCurso" /></a>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1350-html5-css3/diploma/detalle/" target="__blank"><Image name="web" /></a>
-            <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1689-backend-js/diploma/detalle/" target="__blank"><Image name="node" /></a>
+                <ImageContainer>
+                    <a 
+                        href="https://platzi.com/@jakson-duvan-zambrano/ruta/100-escuela-javascript/diploma/detalle/" target="__blank">
+                        <Image name="carrera" />
+                    </a>
+                </ImageContainer>
+                <ImageContainer>
+                    <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1640-frontend-developer/diploma/detalle/" target="__blank">
+                        <Image name="frontend" />
+                    </a>
+                </ImageContainer> 
+                <ImageContainer>
+                    <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1642-javascript-profesional/diploma/detalle/" target="__blank">
+                        <Image name="profesional" />
+                    </a>
+                </ImageContainer> 
+                <ImageContainer>
+                    <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1548-react/diploma/detalle/" target="__blank">
+                        <Image name="reactCurso" />
+                    </a>
+                </ImageContainer>
+                <ImageContainer>
+                    <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1350-html5-css3/diploma/detalle/" target="__blank">
+                        <Image name="web" />
+                    </a>
+                </ImageContainer>
+                <ImageContainer>
+                    <a href="https://platzi.com/@jakson-duvan-zambrano/curso/1689-backend-js/diploma/detalle/" target="__blank">
+                        <Image name="node" />
+                    </a>
+                </ImageContainer>
             </Certificados> 
             <Ancla href="https://platzi.com/@jakson-duvan-zambrano/" target="__black">Ver perfil de Platzi</Ancla>
         </TrainingContainer>

@@ -11,7 +11,16 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+    @media screen and (max-width: 794px){
+    &{
+      scroll-padding-top: 50px;
+    }
+  }
   }
 `
 
@@ -22,11 +31,11 @@ const Hr = styled.hr`
 const IndexPage = (props) => {
   return(
   <Layout>
-    <GlobalStyle/>
+    <GlobalStyle />
     <SEO title="Sitio Web" />
     <Home />
     <Skills/>
-    <Hr/>
+    {/* <Hr/> */}
     <Briefcase/>
     <Training/>
   </Layout>

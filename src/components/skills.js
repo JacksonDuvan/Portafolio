@@ -5,21 +5,25 @@ import Fade from 'react-reveal/Fade'
 
 const SkillsContainer = styled.div`
     width: 100%;
-    height: 100vh;
-    padding-top: 40px;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    height: calc(100vh - 70px);
     background-color: white;
+    border-bottom: 1px solid rgba(0,0,0, .2);
     @media screen and (max-width: 480px){
         &{
-            height: 80vh;
+            height: calc(100vh - 50px);
+            
         }
     }
 `
 
 const H2 = styled.h2`
     text-align: center;
-    margin-top: 50px;
+    /* padding-top: 50px; */
     color: #a9a9a9;
-    z-index: 4;
+    /* z-index: 4; */
     @media screen and (max-width: 480px){
         margin-top: 30px;
     }

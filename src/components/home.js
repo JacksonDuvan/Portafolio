@@ -25,7 +25,11 @@ const HomeContainer = styled.div`
 `
 const Img = styled.div`
   width: 250px;
-  border-radius: 100%;
+  height: 250px;
+  /* #EEE7E1 */
+  /* #ACACAC */
+  background: linear-gradient(90deg, #ACACAC, #EEE7E1);
+  border-radius: 50%;
   object-fit: cover;
   margin: 0 auto;
   overflow: hidden; 
